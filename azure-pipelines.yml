@@ -1,22 +1,21 @@
 trigger:
 - '*'
 
-
-
+variables:
+  buildConfiguration: 'Release'
 
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
-  jobs:
+  jobs: 
   - job: 'Build'
-    diplayName: 'Build job'
+    displayName: 'Build job'
     pool:
       vmImage: 'ubuntu-20.04'
       demands:
       - npm
 
     variables:
-      buildConfiguration: 'Release'
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
       dotnetSdkVersion: '5.x'
 
